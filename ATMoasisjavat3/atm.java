@@ -19,10 +19,10 @@ public class atm{
         for(int i=0; i<num; i++)
         {
             if(arr[i].equals(current)){
-                return false; //returns false when entered account number already exists
+                return false;
             }
         }
-        return true; //returns true when entered account number does not exist
+        return true; 
     }
 
     public static int match(String curr_account, String curr_username)throws IOException
@@ -83,7 +83,7 @@ public class atm{
             }
         }while(validate(username_arr,username,number_of_users) == false);
 
-        // Password Validation
+     
         while(!password.equals(r_password))
         {
             System.out.print("\nSelect a Password: ");
@@ -123,14 +123,15 @@ public class atm{
         username= sc.nextLine();
         index= match(account,username);
 
-        //Checking if registered user or not
+        
         if(index==-1)
         {
             System.out.println("User does not exist!!! Redirecting to Main Menu...");
             return;
         }
 
-        //Checking for the correct password
+       
+        
         while(tries>0 && !password_arr[index].equals(password))
         {
             System.out.print("\nEnter Password: ");
@@ -165,7 +166,7 @@ public class atm{
 
             switch(operation)
             {
-                case 1: //Deposit
+                case 1: 
                     System.out.print("\nEnter Amount to be Deposited: ");
                     double amount= sc.nextDouble();
                     
@@ -181,7 +182,7 @@ public class atm{
 
                     break;
 
-                case 2: //Withdraw
+                case 2:
                     System.out.print("\nEnter Amount to be withdrawn: ");
                     amount= sc.nextDouble();
 
@@ -204,7 +205,7 @@ public class atm{
 
                     break;
                 
-                case 3: //Transfer
+                case 3: 
                     System.out.println("Enter Account Number of receiver: ");
                     String receiver= sc.nextLine();
                     System.out.println("Enter Amount to be transferred: ");
@@ -235,11 +236,11 @@ public class atm{
                 }
                     break;
 
-                case 4: //Check Balance
+                case 4:
                     System.out.println("Current Account Balance is: Rs "+balance_arr[index]);
                     break;
 
-                case 5: //Transaction History
+                case 5: 
                     System.out.println("\n\n--TRANSACTION HISTORY--");
                     for(int k=0; k<curr_trans_num; k++)
                     {
